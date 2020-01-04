@@ -1,0 +1,6 @@
+home-assistant.log
+home-assistant_v2.db
+.HA_VERSION
+.storage
+secrets.yaml
+custom_components/favicon/__pycache*
