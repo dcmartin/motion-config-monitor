@@ -28,7 +28,7 @@ In addition, a JSON payload is created with the event metadata and a single, key
 
 The key frame image is collected by the [`yolo4motion`](http://github.com/dcmartin/open-horizon/tree/master/yolo4motion/README.md) service.
 This service utilizes the [YOLO](https://pjreddie.com/darknet/yolo/) object detection and classification software to identify any of the 
-entities defined and trained; the default are listed in the [`sensor/detect_entity.yaml`](sensor/detect_entity.yaml) file.
+entities defined and trained; the default are listed in the [`input_select/detect_entity.yaml`](input_select/detect_entity.yaml) file.
 
 
 ## Example
