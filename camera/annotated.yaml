@@ -1,0 +1,3 @@
+- platform: mqtt
+  name: motion_event_annotated
+  topic: '+/+/+/image/end/+'

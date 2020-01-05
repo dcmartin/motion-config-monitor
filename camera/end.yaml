@@ -1,0 +1,11 @@
+###
+# camera/end.yaml
+###
+
+- platform: mqtt
+  name: motion_event_end
+  topic: 'motion/nano-1/+/image/end'
+
+- platform: mqtt
+  name: motion_event_animated
+  topic: 'motion/nano-1/+/image-animated'

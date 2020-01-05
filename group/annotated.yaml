@@ -1,0 +1,30 @@
+motion_annotated_details:
+  control: hidden
+  name: motion_annotated_details
+  entities:
+    - binary_sensor.motion_annotated
+    - sensor.motion_annotated_status
+    - sensor.motion_annotated_when
+    - sensor.motion_annotated_ago
+    - sensor.motion_annotated_device
+    - sensor.motion_annotated_camera
+    - sensor.motion_annotated_detected
+    - sensor.motion_annotated_list
+    - sensor.motion_annotated_count
+    - sensor.motion_annotated_entity_count
+    - sensor.motion_annotated_counter
+    - sensor.motion_end_counter
+    - sensor.motion_annotated_percent
+    - sensor.motion_annotated_delay
+
+motion_annotated_history_graphs:
+  name: motion_annotated_history_graphs
+  view: false
+  control: hidden
+  entities:
+    - history_graph.motion_annotated_ago
+    - history_graph.motion_annotated_count
+    - history_graph.motion_annotated_counter
+    - history_graph.motion_annotated_delay
+    - history_graph.motion_annotated_elapsed
+    - history_graph.motion_annotated_percent

@@ -1,0 +1,15 @@
+###
+## sensor/detect_entity.yaml
+###
+
+## entity selected from input_select.motion_detect_entity (e.g. 'person')
+- platform: template
+  sensors:
+    motion_detect_entity:
+      entity_id:
+        - input_select.motion_detect_entity
+      value_template: >-
+        {% if states.input_select.motion_detect_entity is defined %}
+          {{ states.input_select.motion_detect_entity.state }}
+        {% else %}null{% endif %}
+

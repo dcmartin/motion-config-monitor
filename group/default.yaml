@@ -1,0 +1,33 @@
+###
+## group/default.yaml
+###
+
+default_view:
+  name: HOME
+  view: true
+  control: hidden
+  icon: mdi:home
+  entities:
+    - group.datetime
+    - group.all_entity
+    - weather.home
+    - camera.motion_event_annotated
+    - group.motion_annotated_details
+    - group.motion_annotated_history_graphs
+
+all_entity:
+  name: All Entity
+  view: false
+  control: hidden
+  entities:
+    - sun.sun
+    - sensor.host_lan_ip
+    - sensor.host_wan_ip
+
+datetime:
+  name: datetime
+  view: no
+  control: hidden
+  entities:
+    - sensor.date
+    - sensor.time
