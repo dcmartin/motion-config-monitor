@@ -351,20 +351,6 @@
   max_age:
     hours: 72
 
-# seconds ago
-- platform: statistics
-  name: motion_end_ago_statistics
-  entity_id: sensor.motion_end_ago
-  sampling_size: 1000
-  max_age:
-    hours: 72
-- platform: statistics
-  name: motion_end_ago_stdev_statistics
-  entity_id: sensor.motion_end_ago_stdev
-  sampling_size: 1000
-  max_age:
-    hours: 72
-
 # seconds elapsed
 - platform: statistics
   name: motion_end_elapsed_statistics
