@@ -387,19 +387,6 @@
         {% if states('sensor.motion_annotated_percent_statistics') != 'unknown' %}
           {{ states.sensor.motion_annotated_percent_statistics.attributes.change|float }}
         {%- else -%}null{%- endif -%}
-# annotated percent
-- platform: statistics
-  name: motion_annotated_percent_statistics
-  entity_id: sensor.motion_annotated_percent
-  sampling_size: 1000
-  max_age:
-    hours: 72
-- platform: statistics
-  name: motion_annotated_percent_stdev_statistics
-  entity_id: sensor.motion_annotated_percent_stdev
-  sampling_size: 1000
-  max_age:
-    hours: 72
 
 ## count
 - platform: template
@@ -626,6 +613,20 @@
 - platform: statistics
   name: motion_annotated_delay_stdev_statistics
   entity_id: sensor.motion_annotated_delay_stdev
+  sampling_size: 1000
+  max_age:
+    hours: 72
+
+# annotated percent
+- platform: statistics
+  name: motion_annotated_percent_statistics
+  entity_id: sensor.motion_annotated_percent
+  sampling_size: 1000
+  max_age:
+    hours: 72
+- platform: statistics
+  name: motion_annotated_percent_stdev_statistics
+  entity_id: sensor.motion_annotated_percent_stdev
   sampling_size: 1000
   max_age:
     hours: 72

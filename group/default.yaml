@@ -13,6 +13,10 @@ default_view:
     - group.motion_cameras
     - group.motion_annotated_details
     - group.motion_annotated_history_graphs
+    - group.motion_detected_details
+    - group.motion_detected_history_graphs
+    - group.motion_detected_entity_details
+    - group.motion_detected_entity_history_graphs
 
 motion_cameras:
   name: Motion Cameras
@@ -22,6 +26,9 @@ motion_cameras:
     - camera.motion_event_end
     - camera.motion_event_annotated
     - camera.motion_event_animated
+    - camera.motion_annotated_picture
+    - camera.motion_detected_picture
+    - camera.motion_detected_entity_picture
 
 info:
   name: Info
