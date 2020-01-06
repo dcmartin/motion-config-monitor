@@ -4,8 +4,6 @@ motion_annotated_ago:
   refresh: 30
   entities:
     - sensor.motion_annotated_ago
-    - sensor.motion_annotated_ago_min_value
-    - sensor.motion_annotated_ago_max_value
     - sensor.motion_annotated_ago_mean
     - sensor.motion_annotated_ago_stdev
     - sensor.motion_annotated_ago_stdev_statistics
@@ -47,9 +45,8 @@ motion_annotated_elapsed:
 motion_annotated_percent:
   name: motion_annotated_percent
   entities:
+    - sensor.motion_annotated_percent
     - sensor.motion_annotated_percent_mean
-    - sensor.motion_annotated_percent_min_value
-    - sensor.motion_annotated_percent_max_value
     - sensor.motion_annotated_percent_stdev
     - sensor.motion_annotated_percent_stdev_statistics
     - sensor.motion_annotated_percent_stdev_change
@@ -62,8 +59,6 @@ motion_annotated_delay:
   refresh: 30
   entities:
     - sensor.motion_annotated_delay
-    - sensor.motion_annotated_delay_min_value
-    - sensor.motion_annotated_delay_max_value
     - sensor.motion_annotated_delay_mean
     - sensor.motion_annotated_delay_stdev
     - sensor.motion_annotated_delay_stdev_statistics
