@@ -573,6 +573,7 @@
   sampling_size: 1000
   max_age:
     hours: 72
+
 # entity count
 - platform: statistics
   name: motion_annotated_count_statistics
@@ -586,18 +587,7 @@
   sampling_size: 1000
   max_age:
     hours: 72
-- platform: statistics
-  name: motion_annotated_count_statistics
-  entity_id: sensor.motion_annotated_count
-  sampling_size: 1000
-  max_age:
-    hours: 72
-- platform: statistics
-  name: motion_annotated_count_stdev_statistics
-  entity_id: sensor.motion_annotated_count_stdev
-  sampling_size: 1000
-  max_age:
-    hours: 72
+
 # seconds ago
 - platform: statistics
   name: motion_annotated_ago_statistics
@@ -611,6 +601,7 @@
   sampling_size: 1000
   max_age:
     hours: 72
+
 # seconds elapsed
 - platform: statistics
   name: motion_annotated_elapsed_statistics
@@ -624,6 +615,7 @@
   sampling_size: 1000
   max_age:
     hours: 72
+
 # seconds delay
 - platform: statistics
   name: motion_annotated_delay_statistics
