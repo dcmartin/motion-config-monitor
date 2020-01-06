@@ -1,0 +1,10 @@
+###
+## input_number/homeassistant_port.yaml
+###
+
+homeassistant_port:
+  name: homeassistant_port
+  mode: slider
+  initial: !secret ha-port
+  min: 0
+  max: 32767
