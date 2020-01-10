@@ -8,11 +8,10 @@ default_view:
   control: hidden
   icon: mdi:home
   entities:
-    - weather.home
     - group.info
     - group.motion_cameras
-    - group.motion_annotated_details
-    - group.motion_annotated_history_graphs
+    - group.motion_history_graphs
+    - weather.home
 
 motion_cameras:
   name: Motion Cameras
@@ -22,6 +21,18 @@ motion_cameras:
     - camera.motion_event_end
     - camera.motion_event_annotated
     - camera.motion_event_animated
+    - camera.motion_annotated_picture
+    - camera.motion_detected_picture
+    - camera.motion_detected_entity_picture
+
+motion_history_graphs:
+  name: History Graphs
+  view: false
+  control: hidden
+  entities:
+    - history_graph.motion_counter
+    - history_graph.motion_count
+    - history_graph.motion_percent
 
 info:
   name: Info

@@ -1,0 +1,20 @@
+motion_detected_details:
+  control: hidden
+  name: motion_detected_details
+  entities:
+    - binary_sensor.motion_detected
+    - sensor.motion_detected_status
+    - sensor.motion_detected_when
+    - sensor.motion_detected_ago
+    - sensor.motion_detected_counter
+    - sensor.motion_detected_percent
+
+motion_detected_history_graphs:
+  name: motion_detected_history_graphs
+  view: false
+  control: hidden
+  entities:
+    - history_graph.motion_detected_ago
+    - history_graph.motion_detected_count
+    - history_graph.motion_detected_counter
+    - history_graph.motion_detected_percent

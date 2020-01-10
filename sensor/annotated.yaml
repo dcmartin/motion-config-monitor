@@ -387,19 +387,6 @@
         {% if states('sensor.motion_annotated_percent_statistics') != 'unknown' %}
           {{ states.sensor.motion_annotated_percent_statistics.attributes.change|float }}
         {%- else -%}null{%- endif -%}
-# annotated percent
-- platform: statistics
-  name: motion_annotated_percent_statistics
-  entity_id: sensor.motion_annotated_percent
-  sampling_size: 1000
-  max_age:
-    hours: 72
-- platform: statistics
-  name: motion_annotated_percent_stdev_statistics
-  entity_id: sensor.motion_annotated_percent_stdev
-  sampling_size: 1000
-  max_age:
-    hours: 72
 
 ## count
 - platform: template
@@ -542,7 +529,7 @@
           {% set c = e.camera %}
           {% if c is defined and c|lower != 'none' and c != 'unknown' and c|length > 0 %}
             {% set bu = states('sensor.motion_base_url') %}
-            {% set ep = state_attr('camera.motion_event_annotated_' + c,'entity_picture') %}
+            {% set ep = state_attr('camera.motion_event_annotated','entity_picture') %}
             {% if ep != 'unknown' and ep != 'null' and ep|length > 0 and bu != 'unknown' %}
               {% set p = bu + ep %}
             {% else %}
@@ -573,6 +560,7 @@
   sampling_size: 1000
   max_age:
     hours: 72
+
 # entity count
 - platform: statistics
   name: motion_annotated_count_statistics
@@ -586,18 +574,7 @@
   sampling_size: 1000
   max_age:
     hours: 72
-- platform: statistics
-  name: motion_annotated_count_statistics
-  entity_id: sensor.motion_annotated_count
-  sampling_size: 1000
-  max_age:
-    hours: 72
-- platform: statistics
-  name: motion_annotated_count_stdev_statistics
-  entity_id: sensor.motion_annotated_count_stdev
-  sampling_size: 1000
-  max_age:
-    hours: 72
+
 # seconds ago
 - platform: statistics
   name: motion_annotated_ago_statistics
@@ -611,6 +588,7 @@
   sampling_size: 1000
   max_age:
     hours: 72
+
 # seconds elapsed
 - platform: statistics
   name: motion_annotated_elapsed_statistics
@@ -624,6 +602,7 @@
   sampling_size: 1000
   max_age:
     hours: 72
+
 # seconds delay
 - platform: statistics
   name: motion_annotated_delay_statistics
@@ -634,6 +613,20 @@
 - platform: statistics
   name: motion_annotated_delay_stdev_statistics
   entity_id: sensor.motion_annotated_delay_stdev
+  sampling_size: 1000
+  max_age:
+    hours: 72
+
+# annotated percent
+- platform: statistics
+  name: motion_annotated_percent_statistics
+  entity_id: sensor.motion_annotated_percent
+  sampling_size: 1000
+  max_age:
+    hours: 72
+- platform: statistics
+  name: motion_annotated_percent_stdev_statistics
+  entity_id: sensor.motion_annotated_percent_stdev
   sampling_size: 1000
   max_age:
     hours: 72

@@ -16,13 +16,13 @@ tidy:
 
 clean: stop logclean tidy
 	@echo "making $@"
-	rm -f .storage/lovelace 
-	rm -f .storage/core.restore_state
+	sudo rm -f .storage/lovelace 
+	sudo rm -f .storage/core.restore_state
 
 realclean: clean
-	rm -f known_devices.yaml
-	rm -fr home-assistant.log
-	rm -fr home-assistant_v2.*
+	sudo rm -f known_devices.yaml
+	sudo rm -fr home-assistant.log
+	sudo rm -fr home-assistant_v2.*
 
 logclean:
 	@for i in $$(sudo find "/var/lib/docker/containers" -name "*.log" -print); do echo "Cleaning $${i}" && sudo cp /dev/null $${i}; done
