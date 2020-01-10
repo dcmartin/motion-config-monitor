@@ -61,7 +61,7 @@ In the above templates, the **entity** defaults to `all`, indicating YOLO is sea
 
 Below is a screenshot from the system.
 
-![screenshot.png](sample/screenshot.png?raw=true "example")
+![example.gif](sample/example.gif?raw=true "example")
 
 ## How to Use
 
