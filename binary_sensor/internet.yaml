@@ -1,3 +1,7 @@
+###
+## binary_sensor/internet.yaml
+###
+
 - platform: template
   sensors:
     internet_state:

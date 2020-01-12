@@ -12,6 +12,7 @@ default_view:
     - group.motion_cameras
     - group.motion_history_graphs
     - group.intranet_link
+    - group.internet_link
     - group.weather
 
 motion_cameras:
