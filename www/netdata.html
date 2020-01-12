@@ -1,0 +1,80 @@
+<html>
+
+<script type="text/javascript" src="http://www.gstatic.com/charts/loader.js"></script>
+
+<script>
+google.charts.load('current',{'packages':['corechart']});
+</script>
+
+<script>
+function draw_system_cpu()
+{
+  var query = new google.visualization.Query('http://192.168.1.50:19999/api/v1/data?chart=system.cpu&after=-60&format=datasource&options=nonzero',{sendMethod: 'auto'});
+  var chart = new google.visualization.AreaChart(document.getElementById('system_cpu'));
+  var options = { title: 'System CPU', isStacked: 'absolute', vAxis: {minValue: 100}};
+
+  setInterval(function() { query.send(function(data) { chart.draw(data.getDataTable(), options); }); }, 1000);
+}
+</script>
+
+<script>
+function draw_system_load()
+{
+  var query = new google.visualization.Query('http://192.168.1.50:19999/api/v1/data?chart=system.load&after=-60&format=datasource&options=nonzero',{sendMethod: 'auto'});
+  var chart = new google.visualization.AreaChart(document.getElementById('system_load'));
+  var options = { title: 'System Load', isStacked: 'absolute', vAxis: {minValue: 100}};
+
+  setInterval(function() { query.send(function(data) { chart.draw(data.getDataTable(), options); }); }, 1000);
+}
+</script>
+
+<script>
+function draw_system_ram()
+{
+  var query = new google.visualization.Query('http://192.168.1.50:19999/api/v1/data?chart=system.ram&after=-60&format=datasource&options=nonzero',{sendMethod: 'auto'});
+  var chart = new google.visualization.AreaChart(document.getElementById('system_ram'));
+  var options = { title: 'System RAM', isStacked: 'absolute', vAxis: {minValue: 100}};
+
+  setInterval(function() { query.send(function(data) { chart.draw(data.getDataTable(), options); }); }, 1000);
+}
+</script>
+
+<script>
+function draw_users_cpu()
+{
+  var query = new google.visualization.Query('http://192.168.1.50:19999/api/v1/data?chart=users.cpu&after=-60&format=datasource&options=nonzero',{sendMethod: 'auto'});
+  var chart = new google.visualization.AreaChart(document.getElementById('users_cpu'));
+  var options = { title: 'Users CPU', isStacked: 'absolute', vAxis: {minValue: 100}};
+
+  setInterval(function() { query.send(function(data) { chart.draw(data.getDataTable(), options); }); }, 1000);
+}
+</script>
+
+<script>
+function draw_users_mem()
+{
+  var query = new google.visualization.Query('http://192.168.1.50:19999/api/v1/data?chart=users.mem&after=-60&format=datasource&options=nonzero',{sendMethod: 'auto'});
+  var chart = new google.visualization.AreaChart(document.getElementById('users_mem'));
+  var options = { title: 'Users MEM', isStacked: 'absolute', vAxis: {minValue: 100}};
+
+  setInterval(function() { query.send(function(data) { chart.draw(data.getDataTable(), options); }); }, 1000);
+}
+</script>
+
+<script>
+google.charts.setOnLoadCallback(draw_system_cpu);
+google.charts.setOnLoadCallback(draw_system_load);
+google.charts.setOnLoadCallback(draw_system_ram);
+google.charts.setOnLoadCallback(draw_users_cpu);
+google.charts.setOnLoadCallback(draw_users_mem);
+</script>
+
+<body>
+<div id="system_load" style="width: 100%; height: 500px;"></div>
+<div id="system_cpu" style="width: 100%; height: 500px;"></div>
+<div id="system_ram" style="width: 100%; height: 500px;"></div>
+<div id="users_cpu" style="width: 100%; height: 500px;"></div>
+<div id="users_mem" style="width: 100%; height: 500px;"></div>
+</body>
+
+</html>
