@@ -118,27 +118,27 @@
       value_template: '{{ (now().timestamp()|int) - (states.sensor.internet_link.attributes.date|int) }}'
     internet_count:
       entity_id:
-        - sensor.internet_count
+        - sensor.internet_counter
       unit_of_measurement: tests
       value_template: >
-        {% if states.sensor.internet_count is defined %}
-          {{ states.sensor.internet_count.state }}
+        {% if states.sensor.internet_counter is defined %}
+          {{ states.sensor.internet_counter.state }}
         {%- else -%}null{%- endif -%}
     internet_slow_count:
       entity_id:
-        - sensor.internet_slow_count
+        - sensor.internet_slow_counter
       unit_of_measurement: tests
       value_template: >
-        {% if states.sensor.internet_slow_count is defined %}
-          {{ states.sensor.internet_slow_count.state }}
+        {% if states.sensor.internet_slow_counter is defined %}
+          {{ states.sensor.internet_slow_counter.state }}
         {%- else -%}null{%- endif -%}
     internet_fast_count:
       entity_id:
-        - sensor.internet_fast_count
+        - sensor.internet_fast_counter
       unit_of_measurement: tests
       value_template: >
-        {% if states.sensor.internet_fast_count is defined %}
-          {{ states.sensor.internet_fast_count.state }}
+        {% if states.sensor.internet_fast_counter is defined %}
+          {{ states.sensor.internet_fast_counter.state }}
         {%- else -%}null{%- endif -%}
 
 - platform: statistics
@@ -167,21 +167,21 @@
     hours: 24
 
 - platform: history_stats
-  name: internet_count
+  name: internet_counter
   entity_id: binary_sensor.internet_state
   state: 'on'
   type: count
   start: '{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}'
   end: '{{ now() }}'
 - platform: history_stats
-  name: internet_slow_count
+  name: internet_slow_counter
   entity_id: binary_sensor.internet_slow
   state: 'on'
   type: count
   start: '{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}'
   end: '{{ now() }}'
 - platform: history_stats
-  name: internet_fast_count
+  name: internet_fast_counter
   entity_id: binary_sensor.internet_fast
   state: 'on'
   type: count

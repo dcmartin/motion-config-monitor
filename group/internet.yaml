@@ -1,20 +1,24 @@
 internet_link:
-  name: Internet
+  name: Internet Details
   control: hidden
   entities:
     - history_graph.internet_link
-    - sensor.internet_link
-    - sensor.internet_receive
-    - sensor.internet_send
+#    - sensor.internet_link
+#    - sensor.internet_receive
+#    - sensor.internet_send
     - sensor.internet_receive_mean
-    - sensor.internet_receive_min_value
-    - sensor.internet_receive_max_value
-    - sensor.internet_receive_standard_deviation
+#    - sensor.internet_receive_min_value
+#    - sensor.internet_receive_max_value
+#    - sensor.internet_receive_standard_deviation
     - sensor.internet_send_mean
-    - sensor.internet_send_min_value
-    - sensor.internet_send_max_value
-    - sensor.internet_send_standard_deviation
+#    - sensor.internet_send_min_value
+#    - sensor.internet_send_max_value
+#    - sensor.internet_send_standard_deviation
     - sensor.internet_ago
-    - sensor.internet_state
     - sensor.internet_count
+#    - binary_sensor.internet_state
+    - binary_sensor.internet_fast
+    - binary_sensor.internet_slow
+    - binary_sensor.internet_fast_persistent
+    - binary_sensor.internet_slow_persistent
     - input_number.internet_deviation

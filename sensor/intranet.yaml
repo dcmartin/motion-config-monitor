@@ -110,11 +110,27 @@
         {% if states.sensor.intranet_ago.state|int > 30 %}False{% else %}True{% endif %}
     intranet_count:
       entity_id:
-        - sensor.intranet_count
+        - sensor.intranet_counter
       unit_of_measurement: tests
       value_template: >
-        {% if states.sensor.intranet_count is defined %}
-          {{ states.sensor.intranet_count.state }}
+        {% if states.sensor.intranet_counter is defined %}
+          {{ states.sensor.intranet_counter.state }}
+        {%- else -%}null{%- endif -%}
+    intranet_slow_count:
+      entity_id:
+        - sensor.intranet_slow_counter
+      unit_of_measurement: tests
+      value_template: >
+        {% if states.sensor.intranet_slow_counter is defined %}
+          {{ states.sensor.intranet_slow_counter.state }}
+        {%- else -%}null{%- endif -%}
+    intranet_fast_count:
+      entity_id:
+        - sensor.intranet_fast_counter
+      unit_of_measurement: tests
+      value_template: >
+        {% if states.sensor.intranet_fast_counter is defined %}
+          {{ states.sensor.intranet_fast_counter.state }}
         {%- else -%}null{%- endif -%}
 
 - platform: statistics
@@ -143,21 +159,21 @@
     hours: 24
 
 - platform: history_stats
-  name: intranet_count
+  name: intranet_counter
   entity_id: binary_sensor.intranet_state
   state: 'on'
   type: count
   start: '{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}'
   end: '{{ now() }}'
 - platform: history_stats
-  name: intranet_slow_count
+  name: intranet_slow_counter
   entity_id: binary_sensor.intranet_slow
   state: 'on'
   type: count
   start: '{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}'
   end: '{{ now() }}'
 - platform: history_stats
-  name: intranet_fast_count
+  name: intranet_fast_counter
   entity_id: binary_sensor.intranet_fast
   state: 'on'
   type: count
