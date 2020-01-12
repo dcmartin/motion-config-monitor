@@ -11,7 +11,8 @@ default_view:
     - group.info
     - group.motion_cameras
     - group.motion_history_graphs
-    - weather.home
+    - group.intranet_link
+    - group.weather
 
 motion_cameras:
   name: Motion Cameras

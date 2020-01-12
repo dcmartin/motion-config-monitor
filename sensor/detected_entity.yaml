@@ -114,66 +114,6 @@
           {{ states.sensor.motion_detected_entity_ago_stdev_statistics.attributes.change|float }}
         {%- else -%}null{%- endif -%}
 
-## elapsed
-- platform: template
-  sensors:
-    motion_detected_entity_elapsed:
-      friendly_name: Detected entity elapsed
-      entity_id:
-        - sensor.motion_detected_entity_counter
-      unit_of_measurement: seconds
-      value_template: >
-        {% if states.sensor.motion_event_annotated|lower != 'none'
-              and state_attr('sensor.motion_event_annotated','event')|lower != 'none' %}
-          {{ states.sensor.motion_event_annotated.attributes.event.elapsed|int }}
-        {% else %}null{% endif %}
-    # statistics
-    motion_detected_entity_elapsed_mean:
-      friendly_name: Detected entity elapsed avg
-      entity_id:
-        - sensor.motion_detected_entity_elapsed_statistics
-      unit_of_measurement: seconds
-      value_template: >-
-        {% if states('sensor.motion_detected_entity_elapsed_statistics') != 'unknown' %}
-          {{ states.sensor.motion_detected_entity_elapsed_statistics.state|float }}
-        {%- else -%}null{%- endif -%}
-    motion_detected_entity_elapsed_min_value:
-      friendly_name: Detected entity elapsed min
-      entity_id:
-        - sensor.motion_detected_entity_elapsed_statistics
-      unit_of_measurement: seconds
-      value_template: >-
-        {% if states('sensor.motion_detected_entity_elapsed_statistics') != 'unknown' %}
-          {{ states.sensor.motion_detected_entity_elapsed_statistics.attributes.min_value|int }}
-        {%- else -%}null{%- endif -%}
-    motion_detected_entity_elapsed_max_value:
-      friendly_name: Detected entity elapsed max
-      entity_id:
-        - sensor.motion_detected_entity_elapsed_statistics
-      unit_of_measurement: seconds
-      value_template: >-
-        {% if states('sensor.motion_detected_entity_elapsed_statistics') != 'unknown' %}
-          {{ states.sensor.motion_detected_entity_elapsed_statistics.attributes.max_value|int }}
-        {%- else -%}null{%- endif -%}
-    motion_detected_entity_elapsed_stdev:
-      friendly_name: Detected entity elapsed stdev
-      entity_id:
-        - sensor.motion_detected_entity_elapsed_statistics
-      unit_of_measurement: seconds
-      value_template: >
-        {% if states('sensor.motion_detected_entity_elapsed_statistics') != 'unknown' %}
-          {{ states.sensor.motion_detected_entity_elapsed_statistics.attributes.standard_deviation|float }}
-        {%- else -%}null{%- endif -%}
-    motion_detected_entity_elapsed_change:
-      friendly_name: Detected entity elapsed change
-      entity_id:
-        - sensor.motion_detected_entity_elapsed_statistics
-      unit_of_measurement: seconds
-      value_template: >
-        {% if states('sensor.motion_detected_entity_elapsed_statistics') != 'unknown' %}
-          {{ states.sensor.motion_detected_entity_elapsed_statistics.attributes.change|float }}
-        {%- else -%}null{%- endif -%}
-
 ###
 ## counter
 ###
@@ -478,20 +418,6 @@
 - platform: statistics
   name: motion_detected_entity_ago_stdev_statistics
   entity_id: sensor.motion_detected_entity_ago_stdev
-  sampling_size: 1000
-  max_age:
-    hours: 72
-
-# seconds elapsed
-- platform: statistics
-  name: motion_detected_entity_elapsed_statistics
-  entity_id: sensor.motion_detected_entity_elapsed
-  sampling_size: 1000
-  max_age:
-    hours: 72
-- platform: statistics
-  name: motion_detected_entity_elapsed_stdev_statistics
-  entity_id: sensor.motion_detected_entity_elapsed_stdev
   sampling_size: 1000
   max_age:
     hours: 72

@@ -1,0 +1,38 @@
+###
+## history_graph/weather.yaml
+###
+
+weather_temperature:
+  name: weather_temperature
+  hours_to_show: 24
+  refresh: 30
+  entities:
+    - sensor.weather_temperature
+
+weather_humidity:
+  name: weather_humidity
+  hours_to_show: 24
+  refresh: 30
+  entities:
+    - sensor.weather_humidity
+
+weather_pressure:
+  name: weather_pressure
+  hours_to_show: 24
+  refresh: 30
+  entities:
+    - sensor.weather_pressure
+
+weather_wind_speed:
+  name: weather_wind_speed
+  hours_to_show: 24
+  refresh: 30
+  entities:
+    - sensor.weather_wind_speed
+
+weather_wind_bearing:
+  name: weather_wind_bearing
+  hours_to_show: 24
+  refresh: 30
+  entities:
+    - sensor.weather_wind_bearing

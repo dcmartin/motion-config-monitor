@@ -101,64 +101,6 @@
           {{ states.sensor.motion_detected_ago_statistics.attributes.change|float }}
         {%- else -%}null{%- endif -%}
 
-    ## elapsed
-    motion_detected_elapsed:
-      friendly_name: Detected elapsed
-      entity_id:
-        - counter.motion_detected_counter
-      unit_of_measurement: seconds
-      value_template: >
-        {% if state_attr('sensor.motion_event_annotated','event')|lower != 'none'
-              and states.sensor.motion_event_annotated.attributes.event.elapsed|int > 0 %}
-          {{ states.sensor.motion_event_annotated.attributes.event.elapsed|int }}
-        {% else %}null{% endif %}
-    # statistics
-    motion_detected_elapsed_mean:
-      friendly_name: Detected elapsed avg
-      entity_id:
-        - sensor.motion_detected_elapsed_statistics
-      unit_of_measurement: seconds
-      value_template: >-
-        {% if states.sensor.motion_detected_elapsed_statistics|lower != 'none' %}
-          {{ states.sensor.motion_detected_elapsed_statistics.state|float }}
-        {%- else -%}null{%- endif -%}
-    motion_detected_elapsed_min_value:
-      friendly_name: Detected elapsed min
-      entity_id:
-        - sensor.motion_detected_elapsed_statistics
-      unit_of_measurement: seconds
-      value_template: >-
-        {% if states.sensor.motion_detected_elapsed_statistics|lower != 'none' %}
-          {{ states.sensor.motion_detected_elapsed_statistics.attributes.min_value|int }}
-        {%- else -%}null{%- endif -%}
-    motion_detected_elapsed_max_value:
-      friendly_name: Detected elapsed max
-      entity_id:
-        - sensor.motion_detected_elapsed_statistics
-      unit_of_measurement: seconds
-      value_template: >-
-        {% if states.sensor.motion_detected_elapsed_statistics|lower != 'none' %}
-          {{ states.sensor.motion_detected_elapsed_statistics.attributes.max_value|int }}
-        {%- else -%}null{%- endif -%}
-    motion_detected_elapsed_stdev:
-      friendly_name: Detected elapsed stdev
-      entity_id:
-        - sensor.motion_detected_elapsed_statistics
-      unit_of_measurement: seconds
-      value_template: >
-        {% if states.sensor.motion_detected_elapsed_statistics|lower != 'none' %}
-          {{ states.sensor.motion_detected_elapsed_statistics.attributes.standard_deviation|float }}
-        {%- else -%}null{%- endif -%}
-    motion_detected_elapsed_change:
-      friendly_name: Detected elapsed change
-      entity_id:
-        - sensor.motion_detected_elapsed_statistics
-      unit_of_measurement: seconds
-      value_template: >
-        {% if states.sensor.motion_detected_elapsed_statistics|lower != 'none' %}
-          {{ states.sensor.motion_detected_elapsed_statistics.attributes.change|float }}
-        {%- else -%}null{%- endif -%}
-
     ## counter of detected events
     motion_detected_counter:
       friendly_name: Total seen
@@ -464,20 +406,6 @@
 - platform: statistics
   name: motion_detected_ago_stdev_statistics
   entity_id: sensor.motion_detected_ago_stdev
-  sampling_size: 1000
-  max_age:
-    hours: 72
-
-# seconds elapsed
-- platform: statistics
-  name: motion_detected_elapsed_statistics
-  entity_id: sensor.motion_detected_elapsed
-  sampling_size: 1000
-  max_age:
-    hours: 72
-- platform: statistics
-  name: motion_detected_elapsed_stdev_statistics
-  entity_id: sensor.motion_detected_elapsed_stdev
   sampling_size: 1000
   max_age:
     hours: 72

@@ -1,0 +1,19 @@
+intranet_link:
+  name: Intranet
+  control: hidden
+  entities:
+    - history_graph.intranet_link
+    - sensor.intranet_link
+    - sensor.intranet_link_receive
+    - sensor.intranet_link_send
+    - sensor.intranet_receive_mean
+    - sensor.intranet_receive_min_value
+    - sensor.intranet_receive_max_value
+    - sensor.intranet_receive_standard_deviation
+    - sensor.intranet_send_mean
+    - sensor.intranet_send_min_value
+    - sensor.intranet_send_max_value
+    - sensor.intranet_send_standard_deviation
+    - sensor.intranet_link_ago
+    - sensor.intranet_link_state
+    - sensor.intranet_count

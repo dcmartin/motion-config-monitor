@@ -1,0 +1,58 @@
+###
+## sensor/weather.yaml
+###
+
+- platform: template
+  sensors:
+    weather_temperature:
+      entity_id:
+        - weather.home
+      unit_of_measurement: 'F'
+      value_template: >-
+        {% if states.weather.home is not none %}
+          {{ state_attr('weather.home','temperature')|float }}
+        {% else %}null{% endif %}
+
+- platform: template
+  sensors:
+    weather_humidity:
+      entity_id:
+        - weather.home
+      unit_of_measurement: '%'
+      value_template: >-
+        {% if states.weather.home is not none %}
+          {{ state_attr('weather.home','humidity')|float }}
+        {% else %}null{% endif %}
+
+- platform: template
+  sensors:
+    weather_pressure:
+      entity_id:
+        - weather.home
+      unit_of_measurement: 'millibars'
+      value_template: >-
+        {% if states.weather.home is not none %}
+          {{ state_attr('weather.home','pressure')|float }}
+        {% else %}null{% endif %}
+
+- platform: template
+  sensors:
+    weather_wind_speed:
+      entity_id:
+        - weather.home
+      unit_of_measurement: 'Mph'
+      value_template: >-
+        {% if states.weather.home is not none %}
+          {{ state_attr('weather.home','wind_speed')|float }}
+        {% else %}null{% endif %}
+
+- platform: template
+  sensors:
+    weather_wind_bearing:
+      entity_id:
+        - weather.home
+      unit_of_measurement: 'degrees'
+      value_template: >-
+        {% if states.weather.home is not none %}
+          {{ state_attr('weather.home','wind_bearing')|float }}
+        {% else %}null{% endif %}

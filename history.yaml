@@ -1,0 +1,21 @@
+use_include_order: true
+exclude:
+  entities:
+    - sensor.host_wan_ip
+    - sensor.host_lan_ip
+    - sensor.host_uname
+    - sensor.motion_event_annotated
+    - sensor.motion_event_end
+  domains:
+    - sun
+    - automation
+    - camera
+    - group
+    - history_graph
+    - device_tracker
+    - input_boolean
+    - input_number
+    - persistent_notification
+    - updater
+    - weather
+    - weblink

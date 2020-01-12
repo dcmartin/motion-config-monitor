@@ -1,0 +1,15 @@
+###
+## group/weather.yaml
+###
+
+weather:
+  name: weather
+  view: false
+  control: hidden
+  entities:
+    - weather.home
+    - history_graph.weather_temperature
+    - history_graph.weather_humidity
+    - history_graph.weather_pressure
+    - history_graph.weather_wind_speed
+    - history_graph.weather_wind_bearing

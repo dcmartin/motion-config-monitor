@@ -4,6 +4,7 @@
 
 motion_counter:
   name: motion_counter
+#  friendly_name: Event Counter
   entities:
     - sensor.motion_end_counter
     - sensor.motion_annotated_counter
@@ -12,12 +13,14 @@ motion_counter:
 
 motion_count:
   name: motion_count
+#  friendly_name: Entity Counter
   entities:
     - sensor.motion_detected_count
     - sensor.motion_detected_entity_count
 
 motion_percent:
   name: motion_percent
+#  friendly_name: Movement Analysis
   entities:
     - sensor.motion_annotated_percent
     - sensor.motion_detected_percent
