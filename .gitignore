@@ -1,4 +1,5 @@
 .cloud
+.DS_Store
 home-assistant.log
 home-assistant_v2.*
 .HA_VERSION
