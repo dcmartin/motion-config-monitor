@@ -5,7 +5,7 @@
 - platform: command_line
   command: speedtest --json | jq '.date='$(date +%s)'|.latitude=(.client.lat|tonumber)|.longitude=(.client.lon|tonumber)'
   name: internet_link
-  scan_interval: 1800
+  scan_interval: !secret internet-scan-interval
   command_timeout: 60
   json_attributes:
     - server
