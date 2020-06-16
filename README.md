@@ -1,4 +1,4 @@
-# `motion-monitor`
+# `motion-config-monitor`
 
 HomeAssistant configuration for basic monitoring of a `motion` addon environment.
 
