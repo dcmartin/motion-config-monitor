@@ -6,8 +6,8 @@
   name: motion_event_end
   qos: 2
   state_topic: '+/+/+/event/end'
-  expire_after: 1
-  force_update: True
+#  expire_after: 30
+#  force_update: True
   json_attributes:
     - device
     - camera

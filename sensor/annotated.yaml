@@ -6,8 +6,8 @@
   name: motion_event_annotated
   state_topic: '+/+/+/event/end/+'
   qos: 2
-  expire_after: 1
-  force_update: True
+#  expire_after: 30
+#  force_update: True
   json_attributes:
     - timestamp
     - date
